@@ -1,0 +1,8 @@
+when you open the dasboard you see all packs in the db already added. make sure that only the ones you download or create are added.
+when you select the amount to study it should not let you select more than the amount of cards in the pack
+please fix the issue where the user selectos only one card and then the session ends immediately even without them selecting known, somewhat or not known.
+cards get repeted in the same session, even if you select known, somewhat or not known. make sure that the cards are not repeated in the same session.
+in dark mode the text is not visible in edit mode when you hover over a line, make sure to change the text color to something that is visible in dark mode.
+also, the whole browse packs window is white in dark mode, make sure to change that to dark gray or something that is visible in dark mode.
+both tables in admin window are white in dark mode, make sure to change that to dark gray or something that is visible in dark mode.
+in the theme selector there is possiblitiy to select white dark and then there is a third blank option, make sure to remove that blank option and only have white and dark as options.

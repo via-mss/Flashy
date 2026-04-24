@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="application.SettingsController" styleClass="settings-bg">
+    <top>
+        <HBox alignment="CENTER" spacing="10" styleClass="top-bar">
+            <Label styleClass="title-label" text="Settings" />
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="0" styleClass="settings-card" VBox.vgrow="ALWAYS">
+            <VBox spacing="16" styleClass="settings-content" VBox.vgrow="ALWAYS">
+                <!-- Theme Row -->
+                <HBox spacing="12" styleClass="settings-row" alignment="CENTER_LEFT">
+                    <Label text="Theme:" minWidth="100" />
+                    <ComboBox fx:id="themeCombo" prefWidth="150" maxWidth="200" />
+                </HBox>
+                
+                <!-- Display Name Row -->
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="settings-row">
+                    <Label text="Display name:" minWidth="100" />
+                    <TextField fx:id="displayNameField" HBox.hgrow="ALWAYS" minWidth="150" maxWidth="300" />
+                    <Button fx:id="saveNameButton" text="Save name" styleClass="primary-button" minWidth="100" />
+                </HBox>
+                
+                <!-- Divider -->
+                <HBox styleClass="settings-divider" />
+                
+                <!-- Change Password Section -->
+                <VBox spacing="10" styleClass="settings-section" VBox.vgrow="ALWAYS">
+                    <Label text="Change password" styleClass="section-title" />
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="settings-row">
+                        <Label text="Current:" minWidth="100" />
+                        <PasswordField fx:id="currentPasswordField" HBox.hgrow="ALWAYS" minWidth="150" maxWidth="300" />
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="settings-row">
+                        <Label text="New:" minWidth="100" />
+                        <PasswordField fx:id="newPasswordField" HBox.hgrow="ALWAYS" minWidth="150" maxWidth="300" />
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="settings-row">
+                        <Label text="Confirm:" minWidth="100" />
+                        <PasswordField fx:id="confirmPasswordField" HBox.hgrow="ALWAYS" minWidth="150" maxWidth="300" />
+                        <Button fx:id="updatePasswordButton" text="Update Password" styleClass="secondary-button" minWidth="120" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" styleClass="bottom-bar">
+            <Button fx:id="closeButton" text="Close" styleClass="secondary-button" minWidth="80" HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutButton" text="Log out" styleClass="accent-button" minWidth="80" HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+</BorderPane>

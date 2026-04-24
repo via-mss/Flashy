@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StudyModeController">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="top-bar">
+            <Label styleClass="title-label" text="Study Mode" />
+            <Label fx:id="progressLabel" BorderPane.alignment="CENTER" styleClass="progress-label">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                </padding>
+            </Label>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane VBox.vgrow="ALWAYS" style="-fx-padding: 20;">
+            <StackPane fx:id="cardPane" alignment="CENTER" styleClass="card-surface" pickOnBounds="true">
+                <VBox fx:id="cardContentVBox" alignment="CENTER" spacing="8" pickOnBounds="true">
+                    <Label fx:id="cardLabel" wrapText="true" maxWidth="480" styleClass="card-label" pickOnBounds="true" />
+                    <ImageView fx:id="cardImageView" fitWidth="320" fitHeight="180" preserveRatio="true" />
+                </VBox>
+            </StackPane>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" styleClass="bottom-bar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <Button fx:id="knownButton" text="Known" styleClass="primary-button" minWidth="100" HBox.hgrow="ALWAYS" pickOnBounds="true" />
+            <Button fx:id="somewhatButton" text="Somewhat" styleClass="accent-button" minWidth="100" HBox.hgrow="ALWAYS" pickOnBounds="true" />
+            <Button fx:id="notKnownButton" text="Not Known" styleClass="danger-button" minWidth="110" HBox.hgrow="ALWAYS" pickOnBounds="true" />
+            <Button fx:id="endButton" text="End Study" styleClass="warning-button" minWidth="110" HBox.hgrow="ALWAYS" pickOnBounds="true" />
+        </HBox>
+    </bottom>
+</BorderPane>

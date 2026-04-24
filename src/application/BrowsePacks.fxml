@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="application.BrowsePacksController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="top-bar">
+            <Label styleClass="title-label" text="Browse Packs" />
+        </HBox>
+    </top>
+    <center>
+        <TabPane VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Public Packs">
+                    <content>
+                        <HBox spacing="10" VBox.vgrow="ALWAYS" style="-fx-padding: 10;">
+                            <ListView fx:id="packsList" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" minWidth="150" />
+                            <VBox spacing="8" minWidth="120" alignment="TOP_CENTER">
+                                <Label fx:id="packNameLabel" text="Name:" wrapText="true" />
+                                <Label fx:id="packOwnerLabel" text="Owner:" wrapText="true" />
+                                <Label fx:id="packCountLabel" text="Cards:" />
+                                <Button fx:id="downloadButton" text="Download Pack" styleClass="primary-button" minWidth="120" />
+                            </VBox>
+                        </HBox>
+                    </content>
+                </Tab>
+                <Tab text="My Packs">
+                    <content>
+                        <VBox spacing="8" VBox.vgrow="ALWAYS" style="-fx-padding: 10;">
+                            <TableView fx:id="myPacksTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="nameCol" text="Name" minWidth="100" />
+                                    <TableColumn fx:id="ownerCol" text="Owner" minWidth="80" />
+                                    <TableColumn fx:id="cardsCol" text="Cards" minWidth="60" />
+                                </columns>
+                            </TableView>
+                            <HBox spacing="8">
+                                <Button fx:id="editMyPackButton" text="Edit" styleClass="primary-button" minWidth="80" HBox.hgrow="ALWAYS" />
+                                <Button fx:id="deleteMyPackButton" text="Delete" styleClass="danger-button" minWidth="80" HBox.hgrow="ALWAYS" />
+                            </HBox>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_RIGHT" styleClass="bottom-bar">
+            <Button fx:id="refreshButton" text="Refresh" styleClass="primary-button" minWidth="80" HBox.hgrow="ALWAYS" />
+            <Button fx:id="closeButton" text="Close" styleClass="warning-button" minWidth="80" HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+</BorderPane>

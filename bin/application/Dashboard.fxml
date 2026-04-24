@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="application.DashboardController">
+    <top>
+        <HBox alignment="CENTER" spacing="10" styleClass="top-bar">
+            <Label contentDisplay="CENTER" styleClass="title-label" text="Flashcard Dashboard" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="12" VBox.vgrow="ALWAYS" style="-fx-padding: 10;">
+            <HBox alignment="CENTER" spacing="10" styleClass="deck-carousel" VBox.vgrow="ALWAYS">
+                <Button fx:id="prevDecksButton" text="◀" minWidth="36" maxWidth="36" />
+                <HBox fx:id="cardsContainer" alignment="CENTER" spacing="12" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+                <Button fx:id="nextDecksButton" text="▶" minWidth="36" maxWidth="36" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="8" styleClass="bottom-bar">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Button fx:id="studyButton" styleClass="primary-button" text="Study Selected" minWidth="100" HBox.hgrow="ALWAYS" />
+            <Button fx:id="editButton" styleClass="secondary-button" text="Edit Selected" minWidth="100" HBox.hgrow="ALWAYS" />
+            <Button fx:id="createButton" styleClass="accent-button" text="Create New Deck" minWidth="100" HBox.hgrow="ALWAYS" />
+            <Button fx:id="browseButton" styleClass="secondary-button" text="Browse Packs" minWidth="100" HBox.hgrow="ALWAYS" />
+            <Button fx:id="adminButton" styleClass="secondary-button" text="Admin" minWidth="80" HBox.hgrow="ALWAYS" />
+            <Button fx:id="settingsButton" styleClass="secondary-button" text="Settings" minWidth="100" HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="application.AdminController" styleClass="settings-bg">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="top-bar">
+            <Label styleClass="title-label" text="Admin Panel" />
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" styleClass="settings-card" spacing="16" VBox.vgrow="ALWAYS">
+            <HBox spacing="24" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <VBox spacing="8" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" minWidth="200">
+                    <Label text="Users" styleClass="section-title" />
+                    <ListView fx:id="usersList" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" minWidth="150" minHeight="200" />
+                    <HBox spacing="8">
+                        <Button fx:id="banButton" text="Ban" styleClass="danger-button" minWidth="70" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="unbanButton" text="Unban" styleClass="accent-button" minWidth="70" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="deleteUserButton" text="Delete User" styleClass="secondary-button" minWidth="100" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+                <VBox spacing="8" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" minWidth="200">
+                    <Label text="Packs" styleClass="section-title" />
+                    <ListView fx:id="decksList" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" minWidth="150" minHeight="200" />
+                    <HBox spacing="8">
+                        <Button fx:id="editDeckButton" text="Edit Pack" styleClass="primary-button" minWidth="100" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="deleteDeckButton" text="Delete Pack" styleClass="secondary-button" minWidth="100" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_RIGHT" styleClass="bottom-bar">
+            <Button fx:id="refreshButton" text="Refresh" styleClass="primary-button" minWidth="80" HBox.hgrow="ALWAYS" />
+            <Button fx:id="showActiveButton" text="Active" styleClass="accent-button" minWidth="70" HBox.hgrow="ALWAYS" />
+            <Button fx:id="showBannedButton" text="Banned" styleClass="danger-button" minWidth="70" HBox.hgrow="ALWAYS" />
+            <Button fx:id="showAllButton" text="All" styleClass="secondary-button" minWidth="60" HBox.hgrow="ALWAYS" />
+            <Button fx:id="closeButton" text="Close" styleClass="warning-button" minWidth="70" HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+</BorderPane>
